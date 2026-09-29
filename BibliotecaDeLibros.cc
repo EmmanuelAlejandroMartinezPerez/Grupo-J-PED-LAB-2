@@ -2,6 +2,8 @@
 #include <string>
 #include <limits>
 
+using namespace std ;
+
 struct Libro
 {
     int codigo;
@@ -9,9 +11,12 @@ struct Libro
     string autor;
 };
 
+Libro *lista = nullptr
+
 void AgregarLibro();
 void borrarInicio();
 void imprimir();
+
 
 int main()
 {
@@ -44,6 +49,27 @@ int main()
         
     } while (opcion);
     
+}
+
+
+void AgregarLibro(Libro libro){
+    Libro agregar_libro;
+    std::cout << "Ingresa el titulo del libro: ";
+    std::getline(std::cin >> agregar_libro.titulo);
+    std::cout << "Ingresa el autor del libro: ";
+    std::getline(std::cin >> agregar_libro.autor);
+    std::cout << "Ingresa un codigo para el libro: ";
+    std::cin >> agregar_libro.titulo;
+
+    Nodo *nuevo_nodo = new Nodo;
+    nuevo_nodo->libro = libro;
+    nuevo_nodo->siguiente = nullptr;
+    nuevo_nodo->anterior = nullptr;
+    
+    if(inicio == nullptr){
+        inicio = nuevo_nodo;
+        final = nuevo_nodo;
+    }
 }
 
 
